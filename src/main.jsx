@@ -8,6 +8,6 @@ import "./styles/main.css"
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-   
+   <Aside/>
   </StrictMode>,
 )
