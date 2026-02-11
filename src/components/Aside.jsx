@@ -20,7 +20,7 @@ const Aside = () => {
             <ul>
                 {
                     filteredUsers.map((user) => {
-                        <li>
+                        <li key={user.id}>
                             {user.name}
                             <small>{user.message}</small>
                         </li>
