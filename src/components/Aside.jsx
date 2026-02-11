@@ -14,6 +14,9 @@ const Aside = () => {
         <aside>
             <h1>Chat UTN</h1>
             <input type="search" placeholder="Buscar un chat" onChange={handleChange}/>
+            {
+                filteredUsers.length === 0 && <p>No se encontraron resultados.</p>
+            }
             <ul>
                 {
                     filteredUsers.map((user) => {
