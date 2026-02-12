@@ -1,8 +1,30 @@
-import { useState } from "react"
-import { users } from "../services/mockApi"
+import { useEffect, useState } from "react"
 
 const Aside = () => {
     const [search, setSearch] = useState("")
+    const [users, setUsers] = useState([])
+
+    const fetchingData = async () => {
+        try {
+            const response = await fetch("https://devsapihub.com/api-users")
+
+            if(!response.ok){
+                console.log("No se pudo acceder a la api")
+                return
+            }
+
+            const data = await response.json()
+
+            setUsers(data)
+
+        } catch (error) {
+            console.log(error.message)
+        }
+    }
+
+    useEffect(() => {
+        fetchingData()
+    }, [])
 
     const handleChange = (e) => {
         setSearch(e.target.value)
@@ -20,10 +42,15 @@ const Aside = () => {
             <ul>
                 {
                     filteredUsers.map((user) => {
+                        return(
                         <li key={user.id}>
-                            {user.name}
-                            <small>{user.message}</small>
+                            <img src={user.avatar_url}alt="" />
+                            <div>
+                                {user.name}
+                                <small>{user.message}</small>
+                            </div>
                         </li>
+                        )
                     })
                 }
             </ul>
