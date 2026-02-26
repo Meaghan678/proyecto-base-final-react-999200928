@@ -1,27 +1,8 @@
 import { useEffect, useState } from "react"
-import { App } from "./App"
 
 const Aside = ({ onActiveUser }) => {
     const [search, setSearch] = useState("")
     const [users, setUsers] = useState([])
-
-    const fetchingData = async () => {
-        try {
-            const response = await fetch("https://devsapihub.com/api-users")
-
-            if(!response.ok){
-                console.log("No se pudo acceder a la api")
-                return
-            }
-
-            const data = await response.json()
-
-            setUsers(data)
-
-        } catch (error) {
-            console.log(error.message)
-        }
-    }
 
     useEffect(() => {
         fetchingData()
