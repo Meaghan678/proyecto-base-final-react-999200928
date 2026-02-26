@@ -4,9 +4,17 @@
     box-sizing: border-box;
 }
 
+.app {
+  height: 100vh;
+  display: flex;
+  background-color: #f9f9f9;
+}
+
 aside{
     background-color: #111b21;
     color: white;
+    width: 260px;
+    padding: 20px;
     overflow: scroll;
 }
 

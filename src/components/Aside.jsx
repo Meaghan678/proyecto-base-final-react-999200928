@@ -32,6 +32,9 @@ const Aside = () => {
 
     const filteredUsers = users.filter((user) => user.name.toLowerCase().includes(search.toLowerCase()))
 
+    const handleClick = (id) => {
+    } 
+
     return(
         <aside>
             <h1>Chat UTN</h1>
@@ -46,7 +49,7 @@ const Aside = () => {
                 {
                     filteredUsers.map((user) => {
                         return(
-                        <li key={user.id}>
+                        <li key={user.id} onClick={ () => handleClick(user.id)}>
                             <img src={user.avatar_url}alt="" />
                             <div>
                                 {user.name}

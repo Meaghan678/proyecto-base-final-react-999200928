@@ -8,6 +8,9 @@ import "./styles/main.css"
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-   <Aside/>
+    <main className='app'>
+      <Aside/>
+      <Chat></Chat>
+    </main>
   </StrictMode>,
 )
