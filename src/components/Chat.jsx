@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react"
+import { App } from "./App"
 
-const Chat = () => {
+const Chat = ({activeUser}) => {
     const [text, sendText] = useState("")
     const [messages, setMessage] = useState([])
 
@@ -40,11 +41,17 @@ const Chat = () => {
         }
     },[messages])
 
+    if(!activeUser){
+        return(
+            <p>Selecciona un contacto para empezar a conversar</p>
+        )
+    }
+
     return(
-        <section>
+        <section className="chat">
             <header>
-                <h2>Meaghan</h2>
-                <p>Última conexión: hace un minuto</p>
+                <h2>{activeUser.name}</h2>
+                <p>Última conexión: {activeUser.last_seen}</p>
             </header>
             <div className="chat-body" ref={chatBodyRef}>
                 {

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
+import { App } from "./App"
 
-const Aside = () => {
+const Aside = ({ onActiveUser }) => {
     const [search, setSearch] = useState("")
     const [users, setUsers] = useState([])
 
@@ -33,6 +34,7 @@ const Aside = () => {
     const filteredUsers = users.filter((user) => user.name.toLowerCase().includes(search.toLowerCase()))
 
     const handleClick = (id) => {
+        onActiveUser(id)
     } 
 
     return(
