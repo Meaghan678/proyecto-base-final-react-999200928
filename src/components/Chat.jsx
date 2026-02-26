@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react"
-import { App } from "./App"
 
 const Chat = ({activeUser}) => {
     const [text, sendText] = useState("")
@@ -43,7 +42,9 @@ const Chat = ({activeUser}) => {
 
     if(!activeUser){
         return(
-            <p>Selecciona un contacto para empezar a conversar</p>
+            <section className="chat-cont-empty">
+                <p className="chat-empty">Selecciona un contacto para empezar a conversar</p>
+            </section>
         )
     }
 
