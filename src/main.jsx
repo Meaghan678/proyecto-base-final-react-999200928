@@ -6,14 +6,13 @@ import { Aside } from './components/Aside'
 // main styles
 import "./styles/main.css"
 import { ChatProvider } from './context/ChatContext'
+import { RouterApp } from './router/RouterApp'
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
       <ChatProvider>
-        <main className='app'>
-          <Aside/>
-          <Chat/>
-        </main>
+        <RouterApp/>
       </ChatProvider>
   </StrictMode>,
 )
