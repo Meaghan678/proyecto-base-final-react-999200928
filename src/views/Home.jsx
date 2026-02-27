@@ -1,7 +1,7 @@
 import { Aside } from "../components/Aside"
 import { Chat } from "../components/Chat"
 
-const App = () => {
+const Home = () => {
   return (
     <main className='app'>
       <Aside />
@@ -10,4 +10,4 @@ const App = () => {
   )
 }
 
-export { App }
+export { Home }

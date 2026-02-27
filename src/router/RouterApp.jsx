@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { App } from "../views/App"
+import { Home } from "../views/Home"
 import { NotFound } from "../views/NotFound"
 
 
@@ -7,7 +7,7 @@ const RouterApp = () => {
     return(
         <BrowserRouter>
         <Routes>
-            <Route path="/" element={<App/>}/>
+            <Route path="/" element={<Home/>}/>
             <Route path="*" element={<NotFound/>}/>
         </Routes>
         </BrowserRouter>
