@@ -1,10 +1,12 @@
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef, useEffect, useContext } from "react"
+import { ChatContext } from "../context/ChatContext"
 
-const Chat = ({activeUser}) => {
+const Chat = () => {
     const [text, sendText] = useState("")
-    const [messages, setMessage] = useState([])
 
     const chatBodyRef = useRef(null)
+
+    const{ selectedUser } = useContext(ChatContext)
 
     const handleChangeText = (e) => {
       setText(e.target.value)  
@@ -29,8 +31,6 @@ const Chat = ({activeUser}) => {
             time: hour.getHours() + ":" + hour.getMinutes(),
             text: text
         }
-
-        setMessage([...messages, newMessage])
         setText("")
     }
 
@@ -38,9 +38,9 @@ const Chat = ({activeUser}) => {
         if(chatBodyRef.current){
             chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight
         }
-    },[messages])
+    },[])
 
-    if(!activeUser){
+    if(!selectedUser){
         return(
             <section className="chat-cont-empty">
                 <p className="chat-empty">Selecciona un contacto para empezar a conversar</p>
@@ -51,12 +51,12 @@ const Chat = ({activeUser}) => {
     return(
         <section className="chat">
             <header>
-                <h2>{activeUser.name}</h2>
-                <p>Última conexión: {activeUser.last_seen}</p>
+                <h2>{selectedUser.name}</h2>
+                <p>Última conexión: {selectedUser.last_seen}</p>
             </header>
             <div className="chat-body" ref={chatBodyRef}>
                 {
-                    messages.map((message) => <div key={message.id}className={`message ${message.name === "name" ? "me" : "received"}`}>
+                    selectedUser.messages.map((message) => <div key={message.id}className={`message ${message.name === "name" ? "me" : "received"}`}>
                         {message.name}: {message.message}
                         <p className="timestamp">{message.time}</p>
                     </div>)

@@ -5,12 +5,15 @@ import { Aside } from './components/Aside'
 
 // main styles
 import "./styles/main.css"
+import { ChatProvider } from './context/ChatContext'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <main className='app'>
-      <Aside/>
-      <Chat/>
-    </main>
+      <ChatProvider>
+        <main className='app'>
+          <Aside/>
+          <Chat/>
+        </main>
+      </ChatProvider>
   </StrictMode>,
 )

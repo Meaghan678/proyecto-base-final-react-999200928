@@ -1,12 +1,10 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { ChatContext } from "../context/ChatContext"
 
-const Aside = ({ onActiveUser }) => {
+const Aside = () => {
     const [search, setSearch] = useState("")
-    const [users, setUsers] = useState([])
 
-    useEffect(() => {
-        fetchingData()
-    }, [])
+    const { users } = useContext(ChatContext)
 
     const handleChange = (e) => {
         setSearch(e.target.value)
@@ -15,7 +13,7 @@ const Aside = ({ onActiveUser }) => {
     const filteredUsers = users.filter((user) => user.name.toLowerCase().includes(search.toLowerCase()))
 
     const handleClick = (id) => {
-        onActiveUser(id)
+        handleSelectedUser(id)
     } 
 
     return(
