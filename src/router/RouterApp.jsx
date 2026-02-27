@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { App } from "../components/App"
+import { App } from "../views/App"
 import { NotFound } from "../views/NotFound"
 
 
