@@ -2,8 +2,7 @@ import { useState, useRef, useEffect, useContext } from "react"
 import { ChatContext } from "../context/ChatContext"
 
 const Chat = () => {
-    const [text, sendText] = useState("")
-
+    const [text, setText] = useState("")
     const chatBodyRef = useRef(null)
 
     const{ selectedUser } = useContext(ChatContext)
@@ -51,20 +50,25 @@ const Chat = () => {
     return(
         <section className="chat">
             <header>
-                <h2>{selectedUser.name}</h2>
-                <p>Última conexión: {selectedUser.last_seen}</p>
+                <div className="profile">
+                    <img src={selectedUser. avatar_url} alt="" />         
+                </div>
+                <div>
+                    <h2>{selectedUser.name}</h2>
+                    <p className="last-conection">Últ. vez hoy a las {selectedUser.last_seen}</p>
+                </div>
             </header>
             <div className="chat-body" ref={chatBodyRef}>
                 {
-                    selectedUser.messages.map((message) => <div key={message.id}className={`message ${message.name === "name" ? "me" : "received"}`}>
-                        {message.name}: {message.message}
+                    selectedUser.messages.map((message) => <div key={message.id}className={`message ${message.author === "name" ? "me" : "received"}`}>
+                        <p><b>{message.author}</b>: {message.text}</p>
                         <p className="timestamp">{message.time}</p>
                     </div>)
                 }
             </div>
 
             <div className="send-message">
-                <textarea type="text" placeholder="Escribe un mensaje" onChange={handleChangeText} onKeyDown={handleKeyDown} value={text}/>
+                <textarea className="input-send" type="text" placeholder="Escribe un mensaje" onChange={handleChangeText} onKeyDown={handleKeyDown} value={text}/>
                 <button onClick={sendMessage} className="send">
                     <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14L21 3m0 0l-6.5 18a.55.55 0 0 1-1 0L10 14l-7-3.5a.55.55 0 0 1 0-1z"/></svg>
                 </button>

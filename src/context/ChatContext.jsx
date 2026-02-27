@@ -3,7 +3,7 @@ import { users as mockUsers } from "../services/mockApi"
 
 const ChatContext = createContext()
 
-const ChatProvider = () => {
+const ChatProvider = ({children}) => {
     const [users, setUsers] = useState(mockUsers)
     const [selectedUser, setSelectedUser] = useState(null)
 

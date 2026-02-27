@@ -10,12 +10,17 @@
   background-color: #f9f9f9;
 }
 
+/* Aside styles */
+
 aside{
     background-color: #111b21;
     color: white;
     width: 260px;
     padding: 20px;
-    overflow: scroll;
+    overflow-y: scroll;
+}
+section {
+  flex: 1;
 }
 
 aside h1{
@@ -23,6 +28,8 @@ aside h1{
     padding: 10px;
     font-size: 25px;
 }
+
+/* Search styles */
 
 .search-bar{
     padding: 5px;
@@ -56,6 +63,16 @@ aside h1{
     outline: 1px solid #4a4848;
 }
 
+.not-found-chat{
+    text-align: center;
+    color: rgb(139, 136, 136);
+    padding-top: 50px;
+    font-size: 14px;
+
+
+ /* Aside user styles */
+}
+
 ul{
     list-style: none;
 }
@@ -76,4 +93,135 @@ li img{
 
 li:hover{
     background-color: #4a4848;
+}
+
+/* Chat styles */
+
+.chat{
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-cont-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-cont-empty p {
+  color: gray;
+}
+
+.chat header{
+    background-color: #111b21;
+    display: flex;
+    justify-content: left;
+    gap: 12px;
+    border-bottom: 1px solid #202c33;
+    color: white;
+    padding: 6px;
+}
+
+.profile{
+    margin-left: 8px;
+}
+
+.profile img{
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+
+.last-conection{
+    color: rgb(139, 136, 136);
+    font-size: 14px;
+}
+
+.chat-body {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background-color: #111b21;
+}
+
+/* Messages */
+
+.message {
+  max-width: 400px;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.192);
+  word-wrap: break-word;
+  background-color: #e4e6eb;
+}
+
+.message .timestamp {
+  color: gray;
+  font-size: 10px;
+  text-align: end;
+  margin-top: 5px;
+}
+
+.received {
+  align-self: flex-start;
+}
+
+.me {
+  background-color: rgb(194, 236, 194);
+  align-self: end;
+  max-width: 400px;
+}
+
+/* Input y boton send */
+
+.send-message{
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    background-color: #111b21;
+}
+
+.input-send{
+    width: 100%;
+    flex: 1;
+    padding: 5px;
+    resize: none;
+    border-radius: 10px;
+    border: none;
+}
+
+.input-send:focus{
+    outline: 1px solid rgb(35, 34, 34);
+    border: none;
+}
+
+.send{
+    background-color: rgb(62, 186, 62);
+    color: black;
+    border: none;
+    border-radius: 20px;
+    width: 35px;
+    height: 30px;
+    padding: 5px;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.send:hover{
+    background-color: var(--green-400);
+    transform: scale(0.96);
+}
+
+.send svg{
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 880px) {
+  aside {
+    display: none;
+  }
 }
