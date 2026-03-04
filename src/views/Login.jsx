@@ -1,8 +1,14 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { ChatContext } from "../context/ChatContext"
+import { useNavigate } from "react-router-dom"
 
 const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+
+    const { login } = useContext(ChatContext)
+    
+    const navigate = useNavigate()
 
     const handleChangeEmail = (e) => {
         setEmail(e.target.value)
@@ -14,6 +20,14 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        const response = login({email, password})
+
+        if(!response){
+            alert("Usuario no existente 🚨")
+            return
+        }
+
+        navigate("/")
     }
 
     return(
@@ -26,6 +40,7 @@ const Login = () => {
                 <input type="password" placeholder="Contraseña" onChange={handleChangePassword}/>
                 <button>Ingresar</button>
             </form> 
+            <p className="error-login">Error al ingresar</p>
         </section>
     )
 }
