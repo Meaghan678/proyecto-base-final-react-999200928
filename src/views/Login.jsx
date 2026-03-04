@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom"
 const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [error, setError] = useState(null)
 
     const { login } = useContext(ChatContext)
     
@@ -20,10 +21,13 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+
+        setError(null)
+        
         const response = login({email, password})
 
         if(!response){
-            alert("Usuario no existente 🚨")
+            setError(true)
             return
         }
 
@@ -40,7 +44,9 @@ const Login = () => {
                 <input type="password" placeholder="Contraseña" onChange={handleChangePassword}/>
                 <button>Ingresar</button>
             </form> 
-            <p className="error-login">Error al ingresar</p>
+            {
+                error && <p className="error-login">Error al ingresar</p>
+            }
         </section>
     )
 }
