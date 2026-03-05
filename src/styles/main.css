@@ -148,7 +148,7 @@ li:hover{
   background-color: #111b21;
 }
 
-/* Messages */
+/* Messages styles */
 
 .message {
   max-width: 400px;
@@ -176,7 +176,7 @@ li:hover{
   max-width: 400px;
 }
 
-/* Input y boton send */
+/* Input y boton send styles */
 
 .send-message{
     padding: 10px;
@@ -200,7 +200,7 @@ li:hover{
 }
 
 .send{
-    background-color: rgb(62, 186, 62);
+    background-color: #3eba3e;
     color: black;
     border: none;
     border-radius: 20px;
@@ -212,13 +212,69 @@ li:hover{
 }
 
 .send:hover{
-    background-color: var(--green-400);
+    background-color: green;
     transform: scale(0.96);
 }
 
 .send svg{
     width: 100%;
     height: 100%;
+}
+
+/* Login styles */
+
+.login{
+    height: 100vh;
+    background: radial-gradient(circle, #222c32 0%, #0a0f13 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.login h2{
+    color: white;
+    padding: 10px;
+    font-size: 23px;
+}
+
+.login form{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background-color: #07070a4e;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.login form input{
+    padding: 5px;
+    border: none;
+}
+
+.login form input:focus{
+    outline: 1px solid #b7b7bb;
+    border: none;
+}
+
+.login button{
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    background-color: #3d506d;
+    cursor: pointer;
+}
+
+.login button:hover{
+    transform: translateY(-2px);
+}
+
+.error-login{
+    color: #c10202;
+    padding: 6px;
+    font-size: 12px;
 }
 
 @media (max-width: 880px) {

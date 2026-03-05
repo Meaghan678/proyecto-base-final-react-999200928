@@ -23,7 +23,7 @@ const Login = () => {
         e.preventDefault()
 
         setError(null)
-        
+
         const response = login({email, password})
 
         if(!response){
@@ -35,11 +35,10 @@ const Login = () => {
     }
 
     return(
-        <section>
+        <section className="login">
             <h2>Bienvenido!! Inicie sesión</h2>
             <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="Nombre" />
-                <input type="text" placeholder="Apellido"/>
+                <input type="text" placeholder="Nombre y apellido" />
                 <input type="email" placeholder="Email" onChange={handleChangeEmail}/>
                 <input type="password" placeholder="Contraseña" onChange={handleChangePassword}/>
                 <button>Ingresar</button>
