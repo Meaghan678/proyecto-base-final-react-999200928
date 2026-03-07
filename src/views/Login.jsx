@@ -8,7 +8,7 @@ const Login = () => {
     const [password, setPassword] = useState("")
     const [error, setError] = useState(null)
 
-    const { login } = useContext(ChatContext)
+    const { login, handleUser } = useContext(ChatContext)
     
     const navigate = useNavigate()
 
@@ -26,7 +26,7 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-
+ 
         setError(null)
 
         const response = login({name,email, password})
@@ -36,6 +36,7 @@ const Login = () => {
             return
         }
 
+        handleUser(name, email, password)
         navigate("/")
     }
 

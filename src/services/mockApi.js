@@ -229,7 +229,7 @@ const users = [
   },
   {
     id: 17,
-    name: "Anna Müller",
+    name: "Anna Muller",
     email: "annamueller@gmail.com",
     password: "Ann#1991",
     avatar_url: "https://devsapihub.com/img-users/17.jpg",
