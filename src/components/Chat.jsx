@@ -5,7 +5,7 @@ const Chat = () => {
     const [text, setText] = useState("")
     const chatBodyRef = useRef(null)
 
-    const{ selectedUser } = useContext(ChatContext)
+    const{ selectedUser, handleMessages } = useContext(ChatContext)
 
     const handleChangeText = (e) => {
       setText(e.target.value)  
@@ -25,11 +25,13 @@ const Chat = () => {
         const hour = new Date()
 
         const newMessage = {
-            id: messages.length +1,
             author: "me",
             time: hour.getHours() + ":" + hour.getMinutes(),
             text: text
         }
+
+        handleMessages(newMessage)
+
         setText("")
     }
 
