@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 const Register = () => {
     const [name, setName] = useState("")
@@ -7,6 +8,8 @@ const Register = () => {
     const [errorName, setErrorName] = useState(null)
     const [errorEmail, setErrorEmail] = useState(null)
     const [errorPassword, setErrorPassword] = useState(null)
+
+    const navigate = useNavigate()
 
     const handleChangeNameReg = (e) => {
         setName(e.target.value)
@@ -49,6 +52,8 @@ const Register = () => {
         if(password.length < 6){
             setErrorPassword("Mínimo 6 caracteres")
         }
+
+        navigate("/")
     }
 
     return (
