@@ -44,7 +44,7 @@ const Register = () => {
             setErrorEmail("Campo obligatorio")
             return
         }
-        if(!email.includes('@')){
+        if(!email.includes('@gmail.com') && !email.includes('@hotmail.com') && !email.includes('@frba.utn.edu.ar')){
             setErrorEmail("Formato inválido")
             return
         }
