@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import { ChatContext } from "../context/ChatContext"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const Login = () => {
     const [email, setEmail] = useState("")
@@ -53,6 +53,7 @@ const Login = () => {
                 {
                     error && <p className="error-login">Error al iniciar sesión</p>
                 }
+                <p>¿No tienes cuenta? <Link to="/register">Regístrate</Link></p>
             </div>
         </section>
     )
