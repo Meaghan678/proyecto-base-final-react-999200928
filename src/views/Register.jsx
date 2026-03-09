@@ -1,5 +1,6 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { ChatContext } from "../context/ChatContext"
 
 const Register = () => {
     const [name, setName] = useState("")
@@ -8,6 +9,8 @@ const Register = () => {
     const [errorName, setErrorName] = useState(null)
     const [errorEmail, setErrorEmail] = useState(null)
     const [errorPassword, setErrorPassword] = useState(null)
+
+    const { register, handleUser } = useContext(ChatContext)
 
     const navigate = useNavigate()
 
@@ -53,6 +56,7 @@ const Register = () => {
             setErrorPassword("Mínimo 6 caracteres")
         }
 
+        handleUser(name, email, password)
         navigate("/")
     }
 

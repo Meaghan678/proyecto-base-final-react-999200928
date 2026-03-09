@@ -41,8 +41,18 @@ const ChatProvider = ({children}) => {
 
     const selectedUser = users.find(user => user.id === selectedUserId)
 
+    const register = (userData) => {
+        const foundUser = mockUsers.find(user => user.email === userData.email)
+
+        if(!foundUser){
+            return true
+        }else{
+            return false
+        }
+    }
+
     return(
-        <ChatContext.Provider value={{users, handleSelectedUser, login, logOut, handleUser, loggedUser, handleMessages, selectedUser}}>
+        <ChatContext.Provider value={{users, handleSelectedUser, login, logOut, register, handleUser, loggedUser, handleMessages, selectedUser}}>
             {children}
         </ChatContext.Provider>
     )
