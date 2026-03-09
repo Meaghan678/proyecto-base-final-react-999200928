@@ -38,10 +38,10 @@ const Login = () => {
     return(
         <section className="container">
             <div className="welcome">
-                <h2>Bienvenido a Chat UTN</h2>
+                <h2>Bienvenido a Chat UTN 👋🏻</h2>
                 <p>Comienza a chatear con tus amigos de manera gratuita y segura.</p>
-                <p>Para saber mas sobre nosotros entre aqui: </p>
-                <a href="">acerca</a>
+                <p>Nuestra plataforma te permite mantenerte conectado en tiempo real, garantizando que tus conversaciones sean privadas y fluidas desde cualquier dispositivo.</p>
+                <p className="about-us">Para saber mas sobre nosotros entre aqui: </p>
             </div>
             <div className="login">
                 <h2>Iniciar sesión</h2>
@@ -53,7 +53,7 @@ const Login = () => {
                 {
                     error && <p className="error-login">Error al iniciar sesión</p>
                 }
-                <p>¿No tienes cuenta? <Link to="/register">Regístrate</Link></p>
+                <p className="link-reg">¿No tienes cuenta? <Link to="/register">Regístrate</Link></p>
             </div>
         </section>
     )

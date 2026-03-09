@@ -223,9 +223,33 @@ li:hover{
 
 /* Login styles */
 
+.container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    background: radial-gradient(circle, #222c32 0%, #0a0f13 100%);
+    color: white;
+}
+
+.welcome h2{
+    font-size: 37px;
+    padding-bottom: 10px;
+}
+
+.welcome p{
+    max-width: 60ch;
+    line-height: 1.5;
+}
+
+.about-us{
+    padding-top: 18px;
+    font-size: 12px;
+}
+
 .login{
     height: 100vh;
-    background: radial-gradient(circle, #222c32 0%, #0a0f13 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -249,8 +273,10 @@ li:hover{
 }
 
 .login form input{
+    width: 250px;
     padding: 5px;
     border: none;
+    border-radius: 5px;
 }
 
 .login form input:focus{
@@ -275,6 +301,76 @@ li:hover{
     color: #c10202;
     padding: 6px;
     font-size: 12px;
+}
+
+.link-reg{
+    font-size: 14px;
+}
+
+/* Register styles */
+
+.register{
+    height: 100vh;
+    background: radial-gradient(circle, #222c32 0%, #0a0f13 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.register form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #07070a4e;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.register form input{
+    width: 250px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.register button{
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    background-color: #3d506d;
+    cursor: pointer;
+}
+
+.register button:hover{
+    transform: translateY(-2px);
+}
+
+.error-container{
+    text-align: end;
+}
+
+.error-name{
+    margin: 0;
+    font-size: 10px;
+    color: #c10202;
+}
+
+.error-email{
+    font-size: 10px;
+    color: #c10202;
+}
+
+.error-pass{
+    font-size: 10px;
+    color: #c10202;
+}
+
+.link-login{
+    font-size: 14px;
 }
 
 @media (max-width: 880px) {

@@ -1,5 +1,5 @@
 import { useContext, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { ChatContext } from "../context/ChatContext"
 
 const Register = () => {
@@ -46,14 +46,17 @@ const Register = () => {
         }
         if(!email.includes('@')){
             setErrorEmail("Formato inválido")
+            return
         }
 
         //Validacion contraseña
         if(password.length === 0){
             setErrorPassword("Campo obligatorio")
+            return
         }
         if(password.length < 6){
             setErrorPassword("Mínimo 6 caracteres")
+            return
         }
 
         handleUser(name, email, password)
@@ -65,13 +68,20 @@ const Register = () => {
             <h2>Registrate</h2>
             <form noValidate onSubmit={handleSubmitReg}>
                 <input type="text" placeholder="Nombre y apellido" required onChange={handleChangeNameReg}/>
-                { errorName && <p className="error-name">{errorName}</p>}
+                <div className="error-container">
+                    { errorName && <p className="error-name">{errorName}</p>}
+                </div>
                 <input type="email" placeholder="Email" onChange={handleChangeEmailReg}/>
-                { errorEmail && <p className="error-email">{errorEmail}</p>}
+                <div className="error-container">
+                    { errorEmail && <p className="error-email">{errorEmail}</p>}
+                </div>
                 <input type="password" placeholder="Contraseña" onChange={handleChangePasswordReg}/>
-                { errorPassword && <p className="error-pass">{errorPassword}</p>}
+                <div className="error-container">
+                    { errorPassword && <p className="error-pass">{errorPassword}</p>}
+                </div>
                 <button>Enviar</button>
             </form>
+            <p className="link-login">¿Ya tienes cuenta? <Link to="/login">Inicie sesión</Link></p>
         </section>
     )    
 }
