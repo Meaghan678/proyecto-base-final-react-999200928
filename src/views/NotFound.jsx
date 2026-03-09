@@ -2,7 +2,7 @@ const NotFound = () => {
     return(
         <section className="cont-not-found">
             <h1>404</h1>
-            <p>Página no encontrada</p>
+            <p>¡UPS! Página no encontrada 😢</p>
             <a href="/">Ir al home</a>
         </section>
     )

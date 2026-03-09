@@ -451,7 +451,26 @@ li:hover{
     align-items: center;
 }
 
+/* NotFound styles */
+.cont-not-found{
+    min-height: 100vh;
+    background-image: url(/src/assets/fondo-error404.jpg);
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.cont-not-found h1{
+    font-size: 80px;
+}
+
+.cont-not-found p{
+    font-weight: 700;
+    padding-bottom: 8px;
+}
 
 @media (max-width: 880px) {
   aside {
