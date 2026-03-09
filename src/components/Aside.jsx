@@ -42,12 +42,14 @@ const Aside = () => {
             <ul>
                 {
                     filteredUsers.map((user) => {
+                        const lastMessage = user.messages[user.messages.length - 1];
+
                         return(
                         <li key={user.id} onClick={() => handleClick(user.id)}>
                             <img src={user.avatar_url}alt="" />
-                            <div>
+                            <div className="user-last-message">
                                 {user.name}
-                                <small>{user.messages.text}</small>
+                                <small>{lastMessage.text}</small>
                             </div>
                         </li>
                         )

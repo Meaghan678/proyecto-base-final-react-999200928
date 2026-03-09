@@ -39,7 +39,7 @@ const Chat = () => {
         if(chatBodyRef.current){
             chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight
         }
-    },[])
+    },[selectedUser])
 
     if(!selectedUser){
         return(
@@ -62,7 +62,7 @@ const Chat = () => {
             </header>
             <div className="chat-body" ref={chatBodyRef}>
                 {
-                    selectedUser.messages.map((message) => <div key={message.id}className={`message ${message.author === "name" ? "me" : "received"}`}>
+                    selectedUser.messages.map((message) => <div key={message.id}className={`message ${message.author === "me" ? "me" : "received"}`}>
                         <p><b>{message.author}</b>: {message.text}</p>
                         <p className="timestamp">{message.time}</p>
                     </div>)
