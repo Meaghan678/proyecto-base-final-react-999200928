@@ -41,7 +41,7 @@ const Login = () => {
                 <h2>Bienvenido a Chat UTN 👋🏻</h2>
                 <p>Comienza a chatear con tus amigos de manera gratuita y segura.</p>
                 <p>Nuestra plataforma te permite mantenerte conectado en tiempo real, garantizando que tus conversaciones sean privadas y fluidas desde cualquier dispositivo.</p>
-                <p className="about-us">Para saber mas sobre nosotros entre aqui: </p>
+                <p className="about-us">Para saber mas sobre nosotros entre aqui: <Link to="/acerca">acerca</Link> </p>
             </div>
             <div className="login">
                 <h2>Iniciar sesión</h2>
