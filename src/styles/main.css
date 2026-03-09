@@ -409,6 +409,50 @@ li:hover{
     font-size: 14px;
 }
 
+/* Acerca styles */
+
+.container-acerca{
+    background-color: #222c32;
+    color: white;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container-acerca h1{
+    background-image: url(/src/assets/fondo-h1.jpg);
+    background-size: cover;
+    text-align: center;
+    padding: 80px;
+}
+
+.container-acerca h4{
+    color: #00a884;
+    margin-top: 30px;
+    font-size: 18px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+}
+
+.container-acerca p{
+    font-size: 14px;
+    padding: 8px;
+}
+
+.container-acerca img{
+    width: 80%;
+    height: 80vh;
+}
+
+.img-chat{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
 @media (max-width: 880px) {
   aside {
     display: none;

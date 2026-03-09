@@ -1,10 +1,12 @@
 const Acerca = () => {
     return(
-        <section>
+        <section className="container-acerca">
             <h1>Proyecto Final React</h1>
             <h4>¿De que trata?</h4>
             <p>Este proyecto consiste en el desarrollo de una aplicación web de chats que busca emular la experiencia de usuario de WhatsApp. La aplicación incluye un sistema de Login, donde los usuarios previamente registrados pueden acceder a sus conversaciones, y una sección de Registro, que permite a nuevos usuarios crear una cuenta para comenzar a utilizar el chat.</p>
-            <img src="/src/assets/chat.jpg" alt="imagen aplicacion chat" />
+            <div className="img-chat">
+                <img src="/src/assets/chat.jpg" alt="imagen aplicacion chat" />
+            </div>
 
             <h4>Partes principales</h4>
             <p><strong>Aside: </strong>Contiene la lista de todos los usuarios disponibles en la aplicación. Incluye una barra de búsqueda para filtrar usuarios y un botón que permite cerrar la sesión del usuario actual.</p>
@@ -31,7 +33,7 @@ const Acerca = () => {
             <ol>
                 <li><p>Se agregaron links hacia las rutas Login, Register y Acerca, con el objetivo de facilitar la navegación dentro de la aplicación y brindar una interfaz más cómoda e intuitiva para el usuario.</p></li>
                 <li><p>Para las validaciones del formulario Register se utilizaron condicionales para cada campo del formulario. De esta manera, según la condición que no se cumpla, se muestra al usuario el mensaje de error correspondiente.</p></li>
-                <li>Para la funcionalidad de Register se implementó una validación que verifica si ya existe un usuario registrado con el mismo email. Para ello se busca el email ingresado dentro de la lista de usuarios simulada. Si el usuario no existe, se permite continuar con el registro. En caso de que el email ya esté registrado, el sistema impide la creación de la cuenta para evitar usuarios duplicados.</li>
+                <li><p>Para la funcionalidad de Register se implementó una validación que verifica si ya existe un usuario registrado con el mismo email. Para ello se busca el email ingresado dentro de la lista de usuarios simulada. Si el usuario no existe, se permite continuar con el registro. En caso de que el email ya esté registrado, el sistema impide la creación de la cuenta para evitar usuarios duplicados.</p></li>
             </ol>
 
             <h4>Observaciones personales</h4>
