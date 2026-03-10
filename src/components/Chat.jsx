@@ -3,7 +3,6 @@ import { ChatContext } from "../context/ChatContext"
 
 const Chat = () => {
     const [text, setText] = useState("")
-    const [wallpaper, setWallpaper] = useState("")
     const chatBodyRef = useRef(null)
 
     const{ selectedUser, handleMessages } = useContext(ChatContext)
@@ -60,9 +59,6 @@ const Chat = () => {
                     <h2>{selectedUser.name}</h2>
                     <p className="last-conection">Últ. vez hoy a las {selectedUser.last_seen}</p>
                 </div>
-                <button className="picture">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="160" height="128" viewBox="0 0 20 16"><path fill="#ffffff" d="M2 13V9a1 1 0 1 1-2 0V7a1 1 0 1 1 2 0V3a1 1 0 1 1-2 0a3 3 0 0 1 3-3a1 1 0 1 1 0 2h4a1 1 0 1 1 0-2h3a1 1 0 0 1 0 2h4a1 1 0 0 1 0-2h3a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3a1 1 0 0 1 2 0m16-4.497V3a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3.504l4.39-7.322a3 3 0 0 1 4.69-.582zm0 2.823l-3.828-3.814a1 1 0 0 0-1.563.195L8.836 14H17a1 1 0 0 0 1-1zM6 9a3 3 0 1 1 0-6a3 3 0 0 1 0 6m0-2a1 1 0 1 0 0-2a1 1 0 0 0 0 2"/></svg>
-                </button>
             </header>
             <div className="chat-body" ref={chatBodyRef}>
                 {
