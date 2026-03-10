@@ -65,7 +65,7 @@ const Register = () => {
 
     return (
         <section className="register">
-            <h2>Registrate</h2>
+            <h2>Crear cuenta</h2>
             <form noValidate onSubmit={handleSubmitReg}>
                 <input type="text" placeholder="Nombre y apellido" required onChange={handleChangeNameReg}/>
                 <div className="error-container">
