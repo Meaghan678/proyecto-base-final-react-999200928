@@ -153,6 +153,7 @@ li:hover{
     background-color: #111b21;
     display: flex;
     justify-content: left;
+    align-items: center;
     gap: 12px;
     border-bottom: 1px solid #202c33;
     color: white;
@@ -172,6 +173,27 @@ li:hover{
 .last-conection{
     color: #8b8888;
     font-size: 14px;
+}
+
+.picture{
+    margin-left: auto;
+    margin-right: 50px;
+    background-color: #0a0f1300;
+    border: none;
+    width: 35px;
+    height: 30px;
+    padding: 5px;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.picture:hover{
+    transform: scale(0.98);
+}
+
+.picture svg{
+    width: 100%;
+    height: 100%;
 }
 
 .chat-body {
@@ -419,9 +441,15 @@ li:hover{
     line-height: 1.6;
 }
 
-.container-acerca h1{
+.title{
     background-image: url(/src/assets/fondo-h1.jpg);
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-acerca h1{
     text-align: center;
     padding: 80px;
 }

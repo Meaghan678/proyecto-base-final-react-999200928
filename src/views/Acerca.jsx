@@ -1,7 +1,9 @@
 const Acerca = () => {
     return(
         <section className="container-acerca">
-            <h1>Proyecto Final React</h1>
+            <div className="title">
+                <h1>Proyecto Final React</h1>
+            </div>
             <h4>¿De que trata?</h4>
             <p>Este proyecto consiste en el desarrollo de una aplicación web de chats que busca emular la experiencia de usuario de WhatsApp. La aplicación incluye un sistema de Login, donde los usuarios previamente registrados pueden acceder a sus conversaciones, y una sección de Registro, que permite a nuevos usuarios crear una cuenta para comenzar a utilizar el chat.</p>
             <div className="img-chat">
