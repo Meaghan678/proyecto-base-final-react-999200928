@@ -14,15 +14,8 @@ Este proyecto consiste en el desarrollo de una aplicación web de chats que busc
 ## Instrucciones para ejecutar el proyecto localmente
 ```bash
    git clone https://github.com/Meaghan678/proyecto-base-final-react-999200928.git
-   ```
-```bash
    cd proyecto-final-react-999200928
-   ```
-   ```bash
    npm install
-   ```
-   ```bash
    npm run dev
    ```
-
 ## Estructura del proyecto
