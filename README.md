@@ -19,3 +19,14 @@ Este proyecto consiste en el desarrollo de una aplicación web de chats que busc
    npm run dev
    ```
 ## Estructura del proyecto
+* src
+   * assets
+   * components
+   * context
+   * router
+   * services
+   * styles
+   * views
+* main.jsx
+* index.html
+* vercel.json
