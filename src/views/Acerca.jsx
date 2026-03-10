@@ -16,15 +16,10 @@ const Acerca = () => {
 
             <h4>Tecnologías utilizadas</h4>
             <ul>
-                <li>React 
-                    <ul>
-                        <li>JSX</li>
-                        <li>Componentes funcionales</li>
-                        <li>Paginas</li>
-                        <li>Context</li>
-                        <li>Router</li>
-                    </ul>
-                </li>
+                <li>HTML</li>
+                <li>Context</li>
+                <li>Vite</li>
+                <li>React  </li>
                 <li>CSS</li>
                 <li>MockApi</li>
             </ul>
